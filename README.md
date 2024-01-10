@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Arcane
+### Introduction
+Arcane serves as a web-based solution as part of my Harvard's CS50x final project, designed with a minimalist approach to tackle the complexities of newsletter management. It provides an intuitive remedy for subscriber handling, enabling the creation of engaging newsletters using a comprehensive text editor, and ensuring the distribution of personalized content. Through seamless integration with an email service, it optimizes communication efficiency and fosters increased engagement among subscribers.
 
-## Getting Started
+Here are some of the features that Arcane provides out-of-the-box:
+- [Dashboard](#data-visualization)
+- [Export Functionality](#export-functionality)
 
-First, run the development server:
+### Dashboard
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+[]
+### Export Functionality
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[]
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deploy Your Own
 
-## Learn More
+> Note: one-click deployment is a bit broken at the moment – you'll need to change some of the hard-coded values in the codebase to get it working. We're working on fixing this.
 
-To learn more about Next.js, take a look at the following resources:
+You can deploy your own hosted version of Scarab for greater privacy & control. Just click the link below to deploy a ready-to-go version of Dub to Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy with Vercel](https://vercel.com/button)]()
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Built Using
+- [Next.js](https://nextjs.org/): Powers the interactive user interface for managing logs.
+- [Typescript](https://www.typescriptlang.org/): Provides strong typing and code consistency for maintainability.
+- [Tailwind CSS](https://tailwindcss.com/): Streamlines UI development for a clean and responsive interface.
+- [Kinde Auth](https://kinde.com/): Manages user authentication and secures release note content.
+- [Vercel](https://vercel.com/): Hosts and deploys Scarab for seamless accessibility.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Implementation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Scarab is built as a standard Next.js application with [Middleware](https://nextjs.org/docs/advanced-features/middleware) to handle multi-tenancy, inspired by [the Vercel Platforms Starter Kit](https://github.com/vercel/platforms).
+
+## Author
+
+- Kelvin Yelyen ([@kelvinyelyen](https://twitter.com/kelvinyelyen))
