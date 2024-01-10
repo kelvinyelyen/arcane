@@ -1,28 +1,64 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 
 export default function IndexPage() {
   return (
-    <div className="container flex flex-col justify-between gap-4 py-10 md:h-24 md:flex-row md:py-10">
-      <div className="w-full md:w-3/5">
-        <p className="text-6xl md:text-left">
-          Power Up Your Newsletters With Arcane.
-        </p>
+    <div className="">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 mt-10">
+        <div>
+          <h1 className="text-6xl ">
+            Minimal solution to newsletter management.
+          </h1>
+        </div>
+        <div className="mx-24">
+          <h1 className="justify-right flex mb-4">
+            Arcane is your all-in-one solution for simplifying your newsletter
+            journey. Focus on what truly matters – creating outstanding content
+            – while we handle the rest.
+          </h1>
+          <Button>Get Started</Button>
+        </div>
       </div>
-      <div className="w-full md:w-2/5">
-        <p>
-          Arcane is your all-in-one solution for simplifying your newsletter
-          journey. Focus on what truly matters – creating outstanding content –
-          while we handle the rest.
-        </p>
-        <div className="py-5">
-          <Button asChild>
-            <Link href="/register">
-              Get Started
-              <ArrowRight className="h-4" />
-            </Link>
-          </Button>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 py-10 md:h-24 md:py-10">
+        <div className="relative">
+          <Card className="h-[300px] rounded-3xl">
+            <CardHeader>
+              <CardTitle></CardTitle>
+              <CardDescription></CardDescription>
+            </CardHeader>
+            <CardContent></CardContent>
+            <CardFooter className="flex justify-between"></CardFooter>
+          </Card>
+        </div>
+        <div className="relative">
+          <Card className="h-[300px] rounded-3xl">
+            <CardHeader>
+              <CardTitle></CardTitle>
+              <CardDescription></CardDescription>
+            </CardHeader>
+            <CardContent></CardContent>
+            <CardFooter className="flex justify-between"></CardFooter>
+          </Card>
+        </div>
+        <div className="relative">
+          <Card className="h-[300px] rounded-3xl">
+            <CardHeader>
+              <CardTitle></CardTitle>
+              <CardDescription></CardDescription>
+            </CardHeader>
+            <CardContent></CardContent>
+            <CardFooter className="flex justify-between"></CardFooter>
+          </Card>
         </div>
       </div>
     </div>
