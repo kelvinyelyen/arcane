@@ -1,38 +1,29 @@
 # Arcane
 ### Introduction
-Arcane serves as a web-based solution as part of my Harvard's CS50x final project, designed with a minimalist approach to tackle the complexities of newsletter management. It provides an intuitive remedy for subscriber handling, enabling the creation of engaging newsletters using a comprehensive text editor, and ensuring the distribution of personalized content. Through seamless integration with an email service, it optimizes communication efficiency and fosters increased engagement among subscribers.
+Arcane serves as a minimalist web-based solution developed as part of the Harvard CS50x final project. It simplifies newsletter management complexities, providing an intuitive remedy for subscriber handling and enabling the creation of engaging newsletters via a comprehensive text editor. Seamlessly integrated with email services, Arcane optimizes communication efficiency and fosters increased subscriber engagement.
 
 Here are some of the features that Arcane provides out-of-the-box:
-- [Dashboard](#data-visualization)
-- [Export Functionality](#export-functionality)
-
-### Dashboard
-
-[]
-### Export Functionality
-
-[]
-
+- **Dashboard:** Gain insights into subscriber engagement metrics and trends through a comprehensive dashboard.
 
 ## Deploy Your Own
 
 > Note: one-click deployment is a bit broken at the moment – you'll need to change some of the hard-coded values in the codebase to get it working. We're working on fixing this.
 
-You can deploy your own hosted version of Scarab for greater privacy & control. Just click the link below to deploy a ready-to-go version of Dub to Vercel.
+Deploy your own instance of Arcane for enhanced privacy and control. Click the link below to deploy Arcane to Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)]()
 
 ## Built Using
-- [Next.js](https://nextjs.org/): Powers the interactive user interface for managing logs.
-- [Typescript](https://www.typescriptlang.org/): Provides strong typing and code consistency for maintainability.
-- [Tailwind CSS](https://tailwindcss.com/): Streamlines UI development for a clean and responsive interface.
-- [Kinde Auth](https://kinde.com/): Manages user authentication and secures release note content.
-- [Vercel](https://vercel.com/): Hosts and deploys Scarab for seamless accessibility.
+- [Next.js](https://nextjs.org/): Powers the interactive user interface for managing newsletters.
+- [Typescript](https://www.typescriptlang.org/): Provides strong typing and ensures code consistency for maintainability.
+- [Tailwind CSS](https://tailwindcss.com/): Streamlines UI development, offering a clean and responsive interface.
+- [Kinde Auth](https://kinde.com/): Manages user authentication and secures newsletter content.
+- [Vercel](https://vercel.com/):  Hosts and deploys Arcane for seamless accessibility.
 
 
 ## Implementation
 
-Scarab is built as a standard Next.js application with [Middleware](https://nextjs.org/docs/advanced-features/middleware) to handle multi-tenancy, inspired by [the Vercel Platforms Starter Kit](https://github.com/vercel/platforms).
+Arcane is structured as a standard Next.js application. It utilizes [Middleware](https://nextjs.org/docs/advanced-features/middleware) to handle multi-tenancy, drawing inspiration from [the Vercel Platforms Starter Kit](https://github.com/vercel/platforms).
 
 ## Author
 
