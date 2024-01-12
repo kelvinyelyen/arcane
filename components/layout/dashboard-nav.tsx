@@ -24,16 +24,10 @@ export function MainNav({
         Audience
       </Link>
       <Link
-        href="/examples/dashboard"
+        href="/dashboard/content"
         className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Content
-      </Link>
-      <Link
-        href="/examples/dashboard"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-      >
-        Settings
       </Link>
     </nav>
   )

@@ -24,8 +24,8 @@ export default function CustomEditor() {
       .max(100, { message: "Its too long" }),
     content: z
       .string()
-      .min(5, { message: " Hey the title is not long enough" })
-      .max(100, { message: "Its too long" })
+      .min(5, { message: " Hey your post content is not long enough" })
+      .max(100000, { message: "Its too long" })
       .trim(),
   })
 
@@ -44,7 +44,7 @@ export default function CustomEditor() {
 
   return (
     <>
-      <main className="p-24">
+      <main className="pt-10">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
@@ -64,10 +64,10 @@ export default function CustomEditor() {
               control={form.control}
               name="content"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Title</FormLabel>
+                <FormItem className="mt-4">
+                  <FormLabel>Post Content</FormLabel>
                   <FormControl>
-                    <Tiptap content={field.name} onChange={field.onChange}/>
+                    <Tiptap content={field.name} onChange={field.onChange} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

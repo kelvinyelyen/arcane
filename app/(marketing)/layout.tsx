@@ -13,9 +13,9 @@ export default async function MarketingLayout({
   return (
     <div className="container flex min-h-screen flex-col">
       <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-background bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] dark:bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)]">
-        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#f4e7ed,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#1b171e,transparent_1px)]"></div>
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#f9d4e5,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#141414,transparent)]"></div>
       </div>
-      <div className="hidden flex-col md:flex">
+      <div className="flex-col md:flex">
         <div className="flex my-5 items-center">
           <Link
             href="/dashboard"
@@ -39,7 +39,7 @@ export default async function MarketingLayout({
             <span>Arcane</span>
           </Link>
           <div className="ml-auto flex items-center space-x-4">
-            <MainNav className="mx-6" />
+            <MainNav />
           </div>
         </div>
       </div>

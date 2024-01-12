@@ -1,7 +1,7 @@
 import Link from "next/link"
- import { MainNav } from "@/components/layout/dashboard-nav"
- import { UserNav } from "@/components/layout/user-nav"
- import { SiteFooter } from "@/components/layout/site-footer"
+import { MainNav } from "@/components/layout/dashboard-nav"
+import { UserNav } from "@/components/layout/user-nav"
+import { SiteFooter } from "@/components/layout/site-footer"
 
 interface DashboardLayoutProps {
   children?: React.ReactNode
@@ -12,10 +12,14 @@ export default async function DashboardLayout({
 }: DashboardLayoutProps) {
   return (
     <div className="container flex min-h-screen flex-col">
-      <div className="hidden flex-col md:flex">
+      {/* <div className="absolute inset-0 -z-10 h-full w-full noise-background " /> */}
+      <div className="flex-col md:flex">
         <div className="border-b">
           <div className="flex my-5 items-center">
-            <Link href="/dashboard" className="text-lg flex items-center font-normal">
+            <Link
+              href="/dashboard"
+              className="text-lg flex items-center font-normal"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -34,7 +38,7 @@ export default async function DashboardLayout({
               <span>Arcane</span>
             </Link>
             <div className="ml-auto flex items-center space-x-4">
-              <MainNav className="mx-6" />
+              <MainNav className="hidden md:flex mx-0 lg:mx-6" />
               <UserNav />
             </div>
           </div>

@@ -16,12 +16,12 @@ export default function IndexPage() {
     <div className="">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 mt-10">
         <div>
-          <h1 className="text-6xl ">
+          <h1 className="lg:text-6xl text-4xl">
             Minimal solution to newsletter management.
           </h1>
         </div>
-        <div className="mx-24">
-          <h1 className="justify-right flex mb-4">
+        <div className="lg:mx-24 mx-0">
+          <h1 className="flex mb-4">
             Arcane is your all-in-one solution for simplifying your newsletter
             journey. Focus on what truly matters – creating outstanding content
             – while we handle the rest.

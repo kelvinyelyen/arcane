@@ -20,8 +20,8 @@
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
+    --border: 0 0% 86%;
+    --input: 0 0% 86%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
   }
@@ -62,5 +62,5 @@
   background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210920/pngtree-noise-tv-pixel-gray-texture-background-image_903604.png');
   background-repeat: repeat;
   /* You can adjust the opacity and size of the noise texture as needed */
-  opacity: 0.6; /* Adjust opacity as needed */
+  opacity: 0.9; /* Adjust opacity as needed */
 }

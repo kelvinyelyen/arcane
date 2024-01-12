@@ -1,10 +1,14 @@
 "use client"
+
+import Link from "next/link"
+
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { RecentSubs } from "@/components/recent-subscribers"
@@ -17,28 +21,33 @@ const IndexPage = () => {
           <CardHeader>
             <CardTitle>Overview</CardTitle>
           </CardHeader>
-          <CardContent className="mt-20">
-            <h1 className="text-2xl mb-4">
-              This section is your feed. Your most <br /> important activity
-              will show up here.
+          <CardContent className="my-20">
+            <h1 className="text-2xl mb-4 lg:w-[500px] mr-0">
+              This section is your feed. Your most important activity will show
+              up here.
             </h1>
             <p className="text-xs">
               Once you gain a few audience, things will look a lot more
               exciting.
             </p>
-            <div className="py-4">
-              <Button variant={"outline"}>Create a Campaign</Button>
-            </div>
           </CardContent>
+          <CardFooter>
+            <div className="py-4">
+              <Button asChild variant={"outline"}>
+                <Link href="/dashboard/campaigns">Create a Campaign</Link>
+              </Button>
+            </div>
+          </CardFooter>
         </Card>
         <Card className="col-span-2">
           <CardHeader>
             <CardTitle>Recent Subscriptions</CardTitle>
             <CardDescription>
-              You had 15 subscriptions this month.
+              You had <span className="text-pink-500">15</span> subscriptions
+              this month.
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="min-w-screen">
             <RecentSubs />
           </CardContent>
         </Card>

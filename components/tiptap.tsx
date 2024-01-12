@@ -12,11 +12,11 @@ export default function Tiptap({
 }) {
     const editor = useEditor({
         extensions: [StarterKit.configure()],
-        content: content,
+        content: "",
         editorProps: {
             attributes: {
                 class:
-                    "rounded-md border min-h-[500px] border-input bg-background"
+                    "rounded-md border min-h-[500px] border-input bg-background p-4"
             },
         },
         onUpdate({ editor }) {
