@@ -15,14 +15,14 @@ import { RecentSubs } from "@/components/recent-subscribers"
 
 const IndexPage = () => {
   return (
-    <div className="mt-16 space-y-4">
-      <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-7">
-        <Card className="col-span-5">
+    <div className="mt-16">
+      <div className="grid gap-4 grid-cols-1 lg:grid-cols-7">
+        <Card className="lg:col-span-5 col-span-1">
           <CardHeader>
             <CardTitle>Overview</CardTitle>
           </CardHeader>
           <CardContent className="my-20">
-            <h1 className="text-2xl mb-4 lg:w-[500px] mr-0">
+            <h1 className="text-2xl mb-4 lg:w-[500px]">
               This section is your feed. Your most important activity will show
               up here.
             </h1>
@@ -39,7 +39,7 @@ const IndexPage = () => {
             </div>
           </CardFooter>
         </Card>
-        <Card className="col-span-2">
+        <Card className="lg:col-span-2 col-span-1">
           <CardHeader>
             <CardTitle>Recent Subscriptions</CardTitle>
             <CardDescription>
@@ -47,7 +47,7 @@ const IndexPage = () => {
               this month.
             </CardDescription>
           </CardHeader>
-          <CardContent className="min-w-screen">
+          <CardContent className="">
             <RecentSubs />
           </CardContent>
         </Card>
