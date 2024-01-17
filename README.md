@@ -17,7 +17,7 @@ Deploy your own instance of Arcane for enhanced privacy and control. Click the l
 - [Next.js](https://nextjs.org/): Powers the interactive user interface for managing newsletters.
 - [Typescript](https://www.typescriptlang.org/): Provides strong typing and ensures code consistency for maintainability.
 - [Tailwind CSS](https://tailwindcss.com/): Streamlines UI development, offering a clean and responsive interface.
-- [Kinde Auth](https://kinde.com/): Manages user authentication and secures newsletter content.
+- [Appwrite](https://appwrite.io/): Manages user authentication, secures newsletter content and database.
 - [Vercel](https://vercel.com/):  Hosts and deploys Arcane for seamless accessibility.
 
 
