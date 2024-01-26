@@ -21,7 +21,7 @@ export function MainNav({
         Features
       </Link>
       <Button variant={"secondary"} asChild>
-        <Link href="/sign-in">Sign-In</Link>
+        <Link href="/auth/sign-in">Sign-In</Link>
       </Button>
     </nav>
   )

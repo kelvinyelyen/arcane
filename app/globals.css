@@ -64,3 +64,31 @@
   /* You can adjust the opacity and size of the noise texture as needed */
   opacity: 0.9; /* Adjust opacity as needed */
 }
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4rem); /* Adjust the initial position */
+  }
+  to {
+    opacity: 3;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4rem); /* Adjust the initial position */
+  }
+  to {
+    opacity: 3;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out;
+  -webkit-animation: fade-in 0.5s ease-in-out;
+}

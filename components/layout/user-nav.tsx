@@ -1,4 +1,8 @@
+"use client"
+
 import Link from "next/link"
+import React, { useEffect, useState } from "react"
+import { account } from "@/app/appwrite"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -14,6 +18,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function UserNav() {
+  const [user, setUser] = useState(null)
+
+  async function handleLogout() {
+    try {
+      await account.deleteSession("current")
+      setUser(null)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -27,7 +42,7 @@ export function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">kelvinyelyen</p>
+            <p className="text-sm font-medium leading-none">hh</p>
             <p className="text-xs leading-none text-muted-foreground">
               m@example.com
             </p>

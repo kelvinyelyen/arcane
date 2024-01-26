@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { MainNav } from "@/components/layout/main-nav"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { Pyramid } from 'lucide-react';
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -21,22 +22,8 @@ export default async function MarketingLayout({
             href="/dashboard"
             className="text-lg flex items-center font-normal"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-pyramid mr-1"
-            >
-              <path d="M2.5 16.88a1 1 0 0 1-.32-1.43l9-13.02a1 1 0 0 1 1.64 0l9 13.01a1 1 0 0 1-.32 1.44l-8.51 4.86a2 2 0 0 1-1.98 0Z" />
-              <path d="M12 2v20" />
-            </svg>
-            <span>Arcane</span>
+            <Pyramid className="h-6 w-6" />
+            <span className="m-2"> Arcane</span>
           </Link>
           <div className="ml-auto flex items-center space-x-4">
             <MainNav />

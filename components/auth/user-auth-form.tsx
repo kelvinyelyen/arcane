@@ -1,26 +1,74 @@
 "use client"
 
 import * as React from "react"
-
+import { account, ID } from "@/app/appwrite"
+import { createMagicURLSession, handleMagicURLLogin } from "./magic-url-login"
 import { cn } from "@/lib/utils"
+
 import { Icons } from "../icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Mail } from "lucide-react"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const [isLoadingEmail, setIsLoadingEmail] = React.useState<boolean>(false)
+  const [isLoadingGoogle, setIsLoadingGoogle] = React.useState<boolean>(false)
+  const [email, setEmail] = React.useState<string>("")
+  const [isMagicLinkSent, setIsMagicLinkSent] = React.useState<boolean>(false)
 
-  async function onSubmit(event: React.SyntheticEvent) {
+  const onSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault()
-    setIsLoading(true)
-
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+    setIsLoadingEmail(true)
+    try {
+      const response = await createMagicURLSession(email)
+      console.log(response)
+      // Set state to show the prompt
+      setIsMagicLinkSent(true)
+    } catch (error) {
+      console.error("Failed to create Magic URL session:", error)
+    } finally {
+      setIsLoadingEmail(false)
+    }
   }
+
+  const handleGoogle = () => {
+    try {
+      const response = account.createOAuth2Session(
+        "google",
+        "http://localhost:3000/dashboard", // Success URL
+        "http://localhost:3000" // Failure URL
+      )
+      console.log(response)
+    } catch (error) {
+      console.error("Failed to create OAuth session:", error)
+    }
+  }
+
+  React.useEffect(() => {
+    // Check for magic link parameters in the URL
+    const urlParams = new URLSearchParams(window.location.search)
+    const secret = urlParams.get("secret")
+    const userId = urlParams.get("userId")
+
+    if (secret && userId) {
+      handleMagicURLLogin(userId, secret)
+        .then((user) => {
+          console.log("Successfully logged in:", user)
+          // Redirect to the desired page after successful login
+          // For example, you can redirect to the dashboard
+          window.location.replace("/dashboard")
+        })
+        .catch((error) => {
+          console.error("Login failed:", error)
+          // Redirect to an error page or handle the error as needed
+          window.location.replace("/error")
+        })
+    }
+  }, [])
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>
@@ -37,17 +85,31 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
-              disabled={isLoading}
+              disabled={isLoadingEmail}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <Button disabled={isLoading}>
-            {isLoading && (
+          <Button disabled={isLoadingEmail}>
+            {isLoadingEmail && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
             Sign In with Email
           </Button>
         </div>
       </form>
+
+      {isMagicLinkSent && (
+        <div className="animate-fade-in z-0">
+          <Alert>
+            <Mail className="h-4 w-4" />
+            <AlertDescription>
+              Check your email for a login link.
+            </AlertDescription>
+          </Alert>
+        </div>
+      )}
+
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
@@ -58,8 +120,13 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        {isLoading ? (
+      <Button
+        variant="outline"
+        type="button"
+        onClick={handleGoogle}
+        disabled={isLoadingGoogle}
+      >
+        {isLoadingGoogle ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Icons.google className="mr-2 h-4 w-4" />
