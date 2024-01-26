@@ -1,8 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { account, ID } from "@/app/appwrite"
-import { createMagicURLSession, handleMagicURLLogin } from "./magic-url-login"
+import {
+  handleGoogle,
+  createMagicURLSession,
+  handleMagicURLLogin,
+} from "@/appwrite/appwrite"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "../icons"
@@ -26,7 +29,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     try {
       const response = await createMagicURLSession(email)
       console.log(response)
-      // Set state to show the prompt
       setIsMagicLinkSent(true)
     } catch (error) {
       console.error("Failed to create Magic URL session:", error)
@@ -35,21 +37,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     }
   }
 
-  const handleGoogle = () => {
-    try {
-      const response = account.createOAuth2Session(
-        "google",
-        "http://localhost:3000/dashboard", // Success URL
-        "http://localhost:3000" // Failure URL
-      )
-      console.log(response)
-    } catch (error) {
-      console.error("Failed to create OAuth session:", error)
-    }
-  }
-
   React.useEffect(() => {
-    // Check for magic link parameters in the URL
     const urlParams = new URLSearchParams(window.location.search)
     const secret = urlParams.get("secret")
     const userId = urlParams.get("userId")
@@ -58,14 +46,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       handleMagicURLLogin(userId, secret)
         .then((user) => {
           console.log("Successfully logged in:", user)
-          // Redirect to the desired page after successful login
-          // For example, you can redirect to the dashboard
-          window.location.replace("/dashboard")
         })
         .catch((error) => {
           console.error("Login failed:", error)
-          // Redirect to an error page or handle the error as needed
-          window.location.replace("/error")
         })
     }
   }, [])

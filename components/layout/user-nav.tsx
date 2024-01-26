@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import React, { useEffect, useState } from "react"
-import { account } from "@/app/appwrite"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -18,16 +17,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function UserNav() {
-  const [user, setUser] = useState(null)
-
-  async function handleLogout() {
-    try {
-      await account.deleteSession("current")
-      setUser(null)
-    } catch (e) {
-      console.error(e)
-    }
-  }
 
   return (
     <DropdownMenu>
